@@ -1,0 +1,9 @@
+<p>{{idade}}</p>
+<button (click)="aumentarIdade()">Aumentar idade</button>
+<button (click)="diminuirIdade()">Diminuir idade</button>
+<h2>Questão 03 - Idade</h2>
+@if(idade >= 18) {
+ <h3>Acesso Permitido!</h3>
+} @else {
+ <h3>Acesso Negado</h3>
+}
