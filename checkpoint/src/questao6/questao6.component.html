@@ -1,0 +1,9 @@
+<h2>Questão 06 - Usuários</h2>
+<ul class="ingredient-list">
+ @for (usuario of usuarios; track usuario.nome) {
+ <li>Nome: {{ usuario.nome }}, Idade:{{usuario.idade}}</li>
+
+ } @empty {
+ <li> Nenhum usuário cadastrado!</li>
+ }
+</ul>

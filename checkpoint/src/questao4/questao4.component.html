@@ -1,0 +1,9 @@
+<h2>Questão 04 - Lista de tarefas</h2>
+<ul class="ingredient-list">
+ @for (tarefa of tarefas; track $index) {
+ <li>{{ tarefa }}</li>
+ <button (click)="removerTarefas(tarefa)">Remover tarefa</button>
+ } @empty {
+ <li> Nenhuma tarefa pendente!</li>
+ }
+</ul>
