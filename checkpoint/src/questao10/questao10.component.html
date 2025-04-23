@@ -1,0 +1,47 @@
+<h2>QUESTÃO 10 - CALCULADORA SIMPLES</h2>
+
+<div>
+  <label for="valor1">Valor 1 </label>
+  <input type="number" name="valor1" [(ngModel)]="valor1">
+</div>
+
+<div>
+  <label for="valor2">Valor 2 </label>
+  <input type="number" name="valor2" [(ngModel)]="valor2">
+</div>
+
+<p>Selecione a operação MATEMÁTICA desejada:</p>
+<select name="operacao" [(ngModel)]="operacao">
+  <option value="soma">Soma</option>
+  <option value="subtracao">Subtração</option>
+  <option value="multiplicacao">Multiplicação</option>
+  <option value="divisao">Divisão</option>
+</select>
+
+@if(operacao){
+
+  <p>Resultado da Operação matemática {{ operacao }}</p>
+  <p>
+    @switch (operacao) {
+    @case ('soma') {
+      {{ valor1 + valor2}}
+    }
+    @case ('subtracao') {
+      {{ valor1 - valor2 }}
+    }
+    @case ('multiplicacao') {
+      {{ valor1 * valor2}}
+    }
+    @case ('divisao') {
+      @if(valor2==0){
+        Erro: Divisão por 0!
+      } @else{
+        {{ valor1 / valor2}}
+      }
+    }
+    @default {
+    Operação desconhecida
+    }
+    }
+  </p>
+}
